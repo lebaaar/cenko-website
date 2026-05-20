@@ -1,0 +1,4 @@
+name = "cenko-website"
+pages_build_output_dir = ".svelte-kit/cloudflare"
+compatibility_date = "2026-05-20"
+compatibility_flags = ["nodejs_compat"]
