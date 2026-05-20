@@ -6,7 +6,7 @@
 	<title>Cenko | Pravne informacije</title>
 </svelte:head>
 
-<main class="mx-auto max-w-2xl px-6 py-16">
+<main class="mx-auto max-w-2xl">
 	<h1 class="text-3xl font-bold">Pravne informacije</h1>
 	<p class="mb-12 text-sm text-zinc-400">Last updated: {LAST_UPDATED}</p>
 
@@ -14,7 +14,7 @@
 		<section class="mb-8">
 			<h2 class="mb-3 text-lg font-semibold">{section.title}</h2>
 			<ul class="space-y-2">
-				{#each section.bullets as bullet (section.id + bullet)}
+				{#each section.bullets as bullet (section.title + bullet)}
 					<li class="flex gap-3 text-sm text-zinc-300">
 						<span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-zinc-400"></span>
 						<span>{bullet}</span>

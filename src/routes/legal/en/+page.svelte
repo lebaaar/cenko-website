@@ -6,7 +6,7 @@
 	<title>Cenko | Legal</title>
 </svelte:head>
 
-<main class="mx-auto max-w-2xl px-6 py-16">
+<main class="mx-auto max-w-2xl">
 	<h1 class="text-3xl font-bold">Legal Information</h1>
 	<p class="mb-12 text-sm text-zinc-400">Last updated: {LAST_UPDATED}</p>
 
