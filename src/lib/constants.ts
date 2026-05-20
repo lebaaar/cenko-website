@@ -8,11 +8,15 @@ export type LegalSection = {
 };
 
 export type LegalData = {
+    lastUpdated: string;
+    contactEmail: string;
 	title: string;
 	sections: LegalSection[];
 };
 
 export const legalDataEn: LegalData = {
+    lastUpdated: LAST_UPDATED,
+    contactEmail: CONTACT_EMAIL,
     title: 'Legal information',
     sections: [
         {
@@ -136,6 +140,8 @@ export const legalDataEn: LegalData = {
 };
 
 export const legalDataSl: LegalData = {
+    lastUpdated: LAST_UPDATED,
+    contactEmail: CONTACT_EMAIL,
     title: 'Pravne informacije',
     sections: [
         {
