@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { CONTACT_EMAIL, LAST_UPDATED, legalDataEn } from '$lib/constants';
+	import { CONTACT_EMAIL, LAST_UPDATED, legalDataSl } from '$lib/constants';
 </script>
 
 <svelte:head>
@@ -8,9 +8,9 @@
 
 <main class="mx-auto max-w-2xl">
 	<h1 class="text-3xl font-bold">Pravne informacije</h1>
-	<p class="mb-12 text-sm text-zinc-400">Last updated: {LAST_UPDATED}</p>
+	<p class="mb-12 text-sm text-zinc-400">Zadnja posodobitev: {LAST_UPDATED}</p>
 
-	{#each legalDataEn.sections as section (section.id)}
+	{#each legalDataSl.sections as section (section.id)}
 		<section class="mb-8">
 			<h2 class="mb-3 text-lg font-semibold">{section.title}</h2>
 			<ul class="space-y-2">
@@ -24,7 +24,7 @@
 		</section>
 	{/each}
 
-	<h2 class="mb-2 text-lg font-semibold">Questions?</h2>
+	<h2 class="mb-2 text-lg font-semibold">Vprašanja?</h2>
 	<a href="mailto:{CONTACT_EMAIL}" class="text-sm text-zinc-300 underline underline-offset-2">
 		{CONTACT_EMAIL}
 	</a>
