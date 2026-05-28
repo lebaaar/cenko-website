@@ -2,8 +2,11 @@
 	import '$lib/styles/global.css';
 	import logo from '$lib/assets/logo.png';
 	import LanguagePicker from '$lib/components/LanguagePicker.svelte';
-	import { getLocale } from '$paraglide/runtime';
+	import { getLocale, setLocale, locales } from '$paraglide/runtime';
 	import * as m from '$paraglide/messages';
+
+	type Locale = Parameters<typeof setLocale>[0];
+	const supportedLocales = locales as readonly Locale[];
 
 	let { children } = $props();
 	const locale = $derived(getLocale());
@@ -56,7 +59,20 @@
 			<div class="sm:hidden border-t border-[#737A7A]/20 py-4 flex flex-col gap-4 text-sm text-[#8A9291]">
 				<a href="https://github.com/lebaaar/cenko" target="_blank" class="hover:text-[#E4E8E8] transition-colors" onclick={() => (mobileOpen = false)}>GitHub</a>
 				<a href={legalHref} class="hover:text-[#E4E8E8] transition-colors" onclick={() => (mobileOpen = false)}>{m.nav_legal()}</a>
-				<LanguagePicker />
+				<div class="flex gap-2">
+					{#each supportedLocales as lang (lang)}
+						<button
+							onclick={() => { setLocale(lang); mobileOpen = false; }}
+							class={`h-9 px-3 rounded-lg border text-xs font-bold uppercase tracking-widest transition-colors cursor-pointer ${
+								locale === lang
+									? 'border-[#006760] bg-[#006760] text-white'
+									: 'border-[#2E3435] bg-[#1A1F20] text-[#8A9291] hover:border-[#006760] hover:text-[#E4E8E8]'
+							}`}
+						>
+							{lang}
+						</button>
+					{/each}
+				</div>
 			</div>
 		{/if}
 	</nav>
