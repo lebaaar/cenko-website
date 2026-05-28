@@ -1,11 +1,6 @@
 import { fail } from '@sveltejs/kit';
 import type { Actions, RequestEvent } from './$types';
 
-function shouldSkip(event: RequestEvent): boolean {
-	const h = event.url.hostname.toLowerCase();
-	return h === 'localhost' || h === '127.0.0.1' || h === '::1' || h === '[::1]';
-}
-
 export const actions: Actions = {
 	subscribe: async (event) => {
 		const data = await event.request.formData();
@@ -14,7 +9,6 @@ export const actions: Actions = {
 		if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
 			return fail(400, { error: true });
 		}
-		if (!shouldSkip(event)) return;
 
 		const webhookUrl =
 			event.platform?.env?.DISCORD_WEBHOOK_URL || process.env.DISCORD_WEBHOOK_URL;
