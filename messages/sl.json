@@ -1,0 +1,13 @@
+{
+	"$schema": "https://inlang.com/schema/inlang-message-format",
+	"tagline_1": "Vsi popusti.",
+	"tagline_2": "Vse trgovine.",
+	"tagline_3": "Ena aplikacija.",
+	"description": "Cenko vam omogoča ogled vseh popustov iz slovenskih trgovin na enem mestu. Skenirajte račune za sledenje porabe in deljenje nakupovalnih seznamov s prijatelji in družino.",
+	"registered_msg": "Uspešno ste bili dodani na seznam! Ko bo aplikacija na voljo, vas obvestimo.",
+	"email_placeholder": "ime.priimek@email.com",
+	"get_notified": "Obvesti me",
+	"get_notified_hint": "Ko bo aplikacija na voljo, vas obvestimo",
+	"error_invalid_email": "Vnesite veljaven e-poštni naslov.",
+	"nav_legal": "Pravne informacije"
+}

@@ -8,6 +8,7 @@
 	import tusDrogerija from '$lib/assets/stores/tus-drogerija.jpg';
 	import tus from '$lib/assets/stores/tus.png';
 	import logo from '$lib/assets/logo.png';
+	import * as m from '$paraglide/messages';
 	import type { ActionData } from './$types';
 
 	let { form }: { form: ActionData } = $props();
@@ -55,28 +56,27 @@
 				Cenko
 			</h1>
 			<p class="text-2xl sm:text-4xl lg:text-4xl font-bold text-[#E4E8E8] mb-5 lg:mb-6 leading-tight">
-				Every deal.<br />Every store.<br />One app.
+				{m.tagline_1()}<br />{m.tagline_2()}<br />{m.tagline_3()}
 			</p>
 			<p class="text-base text-[#8A9291] mb-8 leading-relaxed max-w-sm mx-auto lg:mx-0">
-				Browse grocery discounts from all major Slovenian stores, scan receipts to track spending,
-				and share shopping lists with family
+				{m.description()}
 			</p>
 			{#if registered}
 				<p class="text-sm text-[#7CD0C6] font-medium">
-					You're on the list — we'll send the link when Cenko launches.
+					{m.registered_msg()}
 				</p>
 			{:else}
 				<form
 					method="POST"
 					action="?/subscribe"
 					use:enhance
-					class="flex flex-col gap-3 max-w-sm mx-auto lg:mx-0"
+					class="flex flex-col gap-2 max-w-sm mx-auto lg:mx-0"
 				>
 					<div class="flex gap-2">
 						<input
 							type="email"
 							name="email"
-							placeholder="your@email.com"
+							placeholder={m.email_placeholder()}
 							required
 							class="flex-1 min-w-0 rounded-lg bg-[#1A1F20] border border-[#2E3435] text-[#E4E8E8] placeholder-[#4A5151] px-4 py-2.5 text-sm focus:outline-none focus:border-[#006760] transition-colors"
 						/>
@@ -84,13 +84,13 @@
 							type="submit"
 							class="rounded-lg bg-[#006760] text-white px-5 py-2.5 text-sm font-semibold hover:bg-[#005A54] transition-colors whitespace-nowrap"
 						>
-							Get notified
+							{m.get_notified()}
 						</button>
 					</div>
 					{#if form?.error}
-						<p class="text-xs text-[#FFB4AB]">{form.error}</p>
+						<p class="text-xs text-[#FFB4AB]">{m.error_invalid_email()}</p>
 					{:else}
-						<p class="text-xs text-[#737A7A]">Get notified when the app goes live</p>
+						<p class="text-xs text-[#737A7A]">{m.get_notified_hint()}</p>
 					{/if}
 				</form>
 			{/if}

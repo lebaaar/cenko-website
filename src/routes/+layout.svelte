@@ -1,7 +1,16 @@
 <script lang="ts">
 	import '$lib/styles/global.css';
 	import logo from '$lib/assets/logo.png';
+	import LanguagePicker from '$lib/components/LanguagePicker.svelte';
+	import { getLocale } from '$paraglide/runtime';
+	import * as m from '$paraglide/messages';
+
 	let { children } = $props();
+	const locale = $derived(getLocale());
+
+	$effect(() => {
+		document.documentElement.lang = locale;
+	});
 </script>
 
 <div class="min-h-screen bg-[#131718] text-[#E4E8E8] font-sans antialiased overflow-x-hidden flex flex-col">
@@ -11,9 +20,10 @@
 				<img src={logo} alt="Cenko" width="28" height="28" class="rounded-lg" />
 				<span class="text-[#E4E8E8] font-bold text-lg tracking-tight">Cenko</span>
 			</a>
-			<div class="flex items-center gap-6 text-sm text-[#8A9291]">
+			<div class="flex items-center gap-4 text-sm text-[#8A9291]">
 				<a href="https://github.com/lebaaar/cenko" target="_blank" class="hover:text-[#E4E8E8] transition-colors">GitHub</a>
-				<a href="/legal" class="hover:text-[#E4E8E8] transition-colors">Legal</a>
+				<a href="/legal" class="hover:text-[#E4E8E8] transition-colors">{m.nav_legal()}</a>
+				<LanguagePicker />
 			</div>
 		</div>
 	</nav>

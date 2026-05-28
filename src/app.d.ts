@@ -1,5 +1,10 @@
 // See https://svelte.dev/docs/kit/types#app.d.ts
 // for information about these interfaces
+
+interface Env {
+	DISCORD_WEBHOOK_URL?: string;
+}
+
 declare global {
 	namespace App {
 		interface Platform {
