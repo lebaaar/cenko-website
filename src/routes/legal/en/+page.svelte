@@ -7,7 +7,7 @@
 </svelte:head>
 
 <main class="mx-auto max-w-2xl">
-	<h1 class="text-3xl font-bold">Legal Information</h1>
+	<h1 class="text-3xl font-bold mt-4 mb-2">Legal Information</h1>
 	<p class="mb-12 text-sm text-zinc-400">Last updated: {LAST_UPDATED}</p>
 
 	{#each legalDataEn.sections as section (section.id)}
@@ -24,8 +24,10 @@
 		</section>
 	{/each}
 
-	<h2 class="mb-2 text-lg font-semibold">Questions?</h2>
-	<a href="mailto:{CONTACT_EMAIL}" class="text-sm text-zinc-300 underline underline-offset-2">
-		{CONTACT_EMAIL}
-	</a>
+	<div class="mb-6">
+		<h2 class="mb-2 text-lg font-semibold">Questions?</h2>
+		<a href="mailto:{CONTACT_EMAIL}" class="text-sm text-zinc-300 underline underline-offset-2">
+			{CONTACT_EMAIL}
+		</a>
+	</div>
 </main>
