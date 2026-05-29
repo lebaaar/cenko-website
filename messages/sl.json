@@ -8,6 +8,5 @@
 	"email_placeholder": "ime.priimek@email.com",
 	"get_notified": "Obvesti me",
 	"get_notified_hint": "Ko bo aplikacija na voljo, vas obvestimo",
-	"error_invalid_email": "Vnesite veljaven e-poštni naslov",
-	"nav_legal": "Pravne informacije"
+	"error_invalid_email": "Vnesite veljaven e-poštni naslov"
 }

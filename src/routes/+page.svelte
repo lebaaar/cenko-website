@@ -96,7 +96,7 @@
 			{/if}
 		</div>
 
-		<div class="w-full px-8 lg:px-0">
+		<div class="w-full px-4 lg:px-0">
 			<svg viewBox="47 35 405 430" class="block w-full" xmlns="http://www.w3.org/2000/svg">
 				<defs>
 					{#each positions as pos, i}

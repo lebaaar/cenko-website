@@ -8,6 +8,5 @@
 	"email_placeholder": "you@email.com",
 	"get_notified": "Get notified",
 	"get_notified_hint": "Get notified when the app goes live",
-	"error_invalid_email": "Enter a valid email address.",
-	"nav_legal": "Legal"
+	"error_invalid_email": "Enter a valid email address."
 }
